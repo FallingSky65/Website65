@@ -3,24 +3,18 @@
   <head>
     <title>Daniel Li's Website</title>
     <style>
-      .image-container {
-        display: flex;
+      .grid-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
         width: 100%;
         gap: 12px;
-        box-sizing: border-box;
       }
 
-      .image-container figure {
-        flex: 1;
-        margin: 0;
-      }
-
-      .image-container img {
+      .grid-container img {
         width: 100%;
-        height: 350px;
+        aspect-ratio: 16 / 9;
         object-fit: cover;
         display: block;
-        border-radius: 6px;
       }
     </style>
   </head>
@@ -32,27 +26,23 @@
     <p>This is a path tracer program I wrote in 2023, before I began to use GitHub regularly. The original code is unchanged from when I last updated it on September 4, 2023. You can find the source now on <a href="https://github.com/FallingSky65/PathTracerFS65" target="_blank">GitHub</a>.</p>
     <p>This program renders a simple scene by simulating photon interactions with surfaces, with each intersection reflecting and accumulating colored light. The code is run entirely on a single CPU thread and the program stores the results for 1/10/50/100 photons per pixel, and displays the final result in a new window.</p>
     <p>Here are the results, each image is 960x720 pixels, and every photon is capped at 4 bounces in the scene.</p>
-    <ul>
-      <li>1 photon per pixel:</li>
+    <p>1 photon per pixel (left) and 10 photons per pixel (right):</p>
+    <div class="grid-container">
       <img src="./PathTracerFS65/Daniel_Li_updated_raytracer_1frames_691200photons.png" width="960" height="720">
-      <li>10 photons per pixel:</li>
       <img src="./PathTracerFS65/Daniel_Li_updated_raytracer_10frames_6912000photons.png" width="960" height="720">
-      <li>50 photons per pixel:</li>
+    </div>
+    <p>50 photons per pixel (left) and 100 photons per pixel (right):</p>
+    <div class="grid-container">
       <img src="./PathTracerFS65/Daniel_Li_updated_raytracer_50frames_34560000photons.png" width="960" height="720">
-      <li>100 photons per pixel:</li>
       <img src="./PathTracerFS65/Daniel_Li_updated_raytracer_100frames_69120000photons.png" width="960" height="720">
-    </ul>
+    </div>
 
     <h1>Voxel65cpp</h1>
     <p>This is a program I wrote in the Summer of 2024, and it implements procedural terrain generation in a voxel engine inspired by Minecraft. It is written in C++ and uses raylib (also raylib-cpp for cpp bindings) for graphics, and it implements on-the-fly optimized mesh generation.</p>
     <p>See the <a href="./Voxel65cpp/Voxel65cpp.html" target="_blank">code run in your browser</a>!</p>
-    <div class="image-container">
-      <figure>
-        <img src="./Voxel65cpp/screenshot1.png">
-      </figure>
-      <figure>
-        <img src="./Voxel65cpp/screenshot2.png">
-      </figure>
+    <div class="grid-container">
+      <img src="./Voxel65cpp/screenshot1.png">
+      <img src="./Voxel65cpp/screenshot2.png">
     </div>
     <h1>Fluid Simulations</h1>
     <p>I've built a series of fluid simulations through which I learned and implmented many graphics programming and parallel computing algorithms.</p>
