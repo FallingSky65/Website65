@@ -3,33 +3,94 @@
   <head>
     <title>Daniel Li's Website</title>
     <style>
-      .grid-container {
+      .grid2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 100%;
+        gap: 12px;
+      }
+
+      .grid2 img {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+        display: block;
+      }
+      
+      .grid4 {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
         width: 100%;
         gap: 12px;
       }
 
-      .grid-container img {
+      .grid4 img {
         width: 100%;
         aspect-ratio: 16 / 9;
         object-fit: cover;
         display: block;
       }
+
+      iframe {
+        display: block;
+        width: 60%;
+        aspect-ratio: 16 / 9;
+        margin: 0 auto;
+      }
+
+      img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      h1 {
+        text-align: center;
+      }
+
+      p,li {
+        font-size: 24px;
+      }
+
+      .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        max-width: 100%;
+        margin: 0 auto;
+      }
+
+      .text-content {
+        flex: 1;
+      }
+      
+      .image-content img {
+        max-width: 100%;
+        height: auto;
+      }
     </style>
   </head>
   <body>
     <h1>About Me</h1>
-    <p>Hi there! I am Daniel Li, known online as FallingSky65. I'm a senior at Montgomery Blair High School with a passion for graphics programming. Here are some of my selected projects:</p>
-    <ul>
-      <li><a href="#PathTracerFS65">PathTracerFS65</a> (Sep 4, 2023)</li>
-      <li><a href="#Voxel65cpp">Voxel65cpp</a> (Jul, 2024)</li>
-      <li><a href="#Fluid65">Fluid65</a> (Aug 14, 2024)</li>
-      <li><a href="#FluidSim65">FluidSim65</a> (Feb 18, 2025)</li>
-      <li><a href="#metaleulerianfluid">metaleulerianfluid</a> (Mar 21, 2025)</li>
-      <li><a href="#LiquidMetal65">LiquidMetal65</a> (Jun 29, 2025)</li>
-      <li><a href="#rustyfluid65">rustyfluid65</a> (Apr 2026 - present)</li>
-    </ul>
+    <div class="container">
+      <div class="text-content">
+        <p>Hi there! I am Daniel Li, known online as <a href="https://github.com/FallingSky65" target="_blank">FallingSky65</a>. I'm a senior at Montgomery Blair High School with a passion for graphics programming. Here are some of my selected projects:</p>
+        <ul>
+          <li><a href="#PathTracerFS65">PathTracerFS65</a> (Sep 4, 2023)</li>
+          <li><a href="#Voxel65cpp">Voxel65cpp</a> (Jul, 2024)</li>
+          <li><a href="#SatPathVisualizer">SatPathVisualizer</a> (Aug, 2024)</li>
+          <li><a href="#Fluid65">Fluid65</a> (Aug 14, 2024)</li>
+          <li><a href="#FluidSim65">FluidSim65</a> (Feb 18, 2025)</li>
+          <li><a href="#metaleulerianfluid">metaleulerianfluid</a> (Mar 21, 2025)</li>
+          <li><a href="#LiquidMetal65">LiquidMetal65</a> (Jun 29, 2025)</li>
+          <li><a href="#rustyfluid65">rustyfluid65</a> (Apr 2026 - present)</li>
+        </ul>
+      </div>
+      <div class="image-content">
+        <img src="./pfp.jpg">
+      </div>
+    </div>
 
     <h1 id="PathTracerFS65">PathTracerFS65</h1>
     <ul>
@@ -39,7 +100,7 @@
     <p>This program renders a simple scene by simulating photon interactions with surfaces, with each intersection reflecting and accumulating colored light. The code is run entirely on a single CPU thread and the program stores the results for 1/10/50/100 photons per pixel, and displays the final result in a new window.</p>
     <p>Here are the results, each image is 960x720 pixels, and every photon is capped at 4 bounces in the scene.</p>
     <p>From left to right: 1 photon per pixel, 10 photons per pixel, 50 photons per pixel, 100 photons per pixel:</p>
-    <div class="grid-container">
+    <div class="grid4">
       <img src="./PathTracerFS65/Daniel_Li_updated_raytracer_1frames_691200photons.png">
       <img src="./PathTracerFS65/Daniel_Li_updated_raytracer_10frames_6912000photons.png">
       <img src="./PathTracerFS65/Daniel_Li_updated_raytracer_50frames_34560000photons.png">
@@ -52,41 +113,63 @@
       <li><a href="./Voxel65cpp/Voxel65cpp.html" target="_blank">Try the web demo in your browser!</a></li>
     </ul>
     <p>This is a program I wrote in July 2024, and it implements procedural terrain generation in a voxel engine inspired by Minecraft. It is written in C++ and uses raylib (also raylib-cpp for cpp bindings) for graphics, and it implements on-the-fly optimized mesh generation.</p>
-    <div class="grid-container">
+    <div class="grid2">
       <img src="./Voxel65cpp/screenshot1.png">
       <img src="./Voxel65cpp/screenshot2.png">
     </div>
+
+    <h1 id="SatPathVisualizer">SatPathVisualizer</h1>
+    <ul>
+      <li>Source code: <a href="https://github.com/FallingSky65/SatPathVisualizer" target="_blank">https://github.com/FallingSky65/SatPathVisualizer</a></li>
+      <li>Example project: <a href="https://github.com/FallingSky65/SatPathVisualizerExample" target="_blank">https://github.com/FallingSky65/SatPathVisualizerExample</a></li>
+    </ul>
+    <p>I built SatPathVisualizer as a C++ library for creating satellite orbit path visualizations. Industry methods for creating these visualizations, typically for satellite missions, often require using paid/closed-source/external services. This project aimed to solve that by creating an open source library under the MIT license.</p>
+    <iframe src="https://www.youtube.com/embed/PbOrMjX0KfM?si=tmH6F44Uf4kGNtD0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <p>I had the opportunity to present this work at the 2024 American Geophysical Union conference:</p>
+    <img src="./SatPathVisualizerAGU.png" width="60%">
 
     <h1 id="Fluid65">Fluid65</h1>
     <ul>
       <li>Source code: <a href="https://github.com/FallingSky65/Fluid65" target="_blank">https://github.com/FallingSky65/Fluid65</a></li>
       <li><a href="./Fluid65/Fluid65.html" target="_blank">Try the web demo in your browser!</a></li>
     </ul>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/8xFM_rBK8Ck?si=U5sj_67I3rNSszHn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <p>In total, I've built five fluid simulation projects, each focused on learning and implementing new techniques for faster and more optimized fluid modeling.</p>
+    <p>This was my first fluid simulation, inspired by this <a href="https://www.youtube.com/watch?v=rSKMYc1CQHE" target="_blank">YouTube video by Sebastian Lague</a>. It uses smoothed particle hydrodynamics (SPH) (<a href="https://matthias-research.github.io/pages/publications/sca03.pdf" target="_blank">Müller 2003</a>) to simulate fluid physics for 512 particles at 60 FPS. It runs on a single CPU thread in C++, and graphics were done using <a href="https://www.raylib.com/">raylib</a> and GLSL shaders.</p>
+    <iframe src="https://www.youtube.com/embed/8xFM_rBK8Ck?si=U5sj_67I3rNSszHn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
     <h1 id="FluidSim65">FluidSim65</h1>
     <ul>
       <li>Source code: <a href="https://github.com/FallingSky65/FluidSim65" target="_blank">https://github.com/FallingSky65/FluidSim65</a></li>
     </ul>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/waH-T-jF3h0?si=o0wD5XqETdnZnoVt" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <p>This was my second fluid simulation, and it improved on the first in three main ways:</p>
+    <ol>
+      <li>I used spatial hashing to separate the space into discrete cells for optimized particle-particle lookup, going from O(N^2) to O(N).</li>
+      <li>I parallelized the computation across multiple CPU threads.</li>
+      <li>I implemented screen-space rendering inspired by <a href="https://www.youtube.com/watch?v=kOkfC5fLfgE" target="_blank">this YouTube video</a>.</li>
+    </ol>
+    <p>This simulation could handle 20x more particles than my first, simulating physics for 10,000 particles at 60 FPS.</p>
+    <iframe src="https://www.youtube.com/embed/waH-T-jF3h0?si=o0wD5XqETdnZnoVt" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     
     <h1 id="metaleulerianfluid">metaleulerianfluid</h1>
     <ul>
       <li>Source code: <a href="https://github.com/FallingSky65/metaleulerianfluid" target="_blank">https://github.com/FallingSky65/metaleulerianfluid</a></li>
     </ul>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/sBTODx6NLd8?si=biHPucr4ZjcaGCpj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <p>This is my third fluid simulation. Unlike the previous two, which were particle-based (Lagrangian) and ran on the CPU, this was grid-based (Eulerian) and ran on the GPU using <a href="https://developer.apple.com/metal/" target="_blank">Metal</a> compute shaders. Seeing the performance boost from the multithreaded parallel processing in my second iteration, this version was focused on learning GPU programming so I could harness the GPU chip for more powerful parallel compute.</p>
+    <iframe src="https://www.youtube.com/embed/sBTODx6NLd8?si=biHPucr4ZjcaGCpj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
     <h1 id="LiquidMetal65">LiquidMetal65</h1>
     <ul>
       <li>Source code: <a href="https://github.com/FallingSky65/LiquidMetal65" target="_blank">https://github.com/FallingSky65/LiquidMetal65</a></li>
     </ul>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/Tw0X9M08pFw?si=O4W33o5mV_w-VLox" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <p>This is my fourth fluid simulation. Using the GPU programming I learned from my third iteration, this version reimplements the 3D SPH Lagrangian model but with the simulation GPU-accelerated by Metal compute shaders. I implemented a GPU parallel bitonic sort to facilitate this change in architecture (CPU sorts are not optimal on a GPU). This pushed my performance to 32k particles at 60 FPS.</p>
+    <iframe src="https://www.youtube.com/embed/Tw0X9M08pFw?si=O4W33o5mV_w-VLox" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
     <h1 id="rustyfluid65">rustyfluid65</h1>
     <ul>
       <li>Source code: <a href="https://github.com/FallingSky65/rustyfluid65" target="_blank">https://github.com/FallingSky65/rustyfluid65</a></li>
     </ul>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/ugMpH08XqSo?si=M6ni_HV1aGs46HqG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <p>This is my fifth and most recent fluid simulation. Using the Metal graphics API locks my code to Apple's ecosystem of hardware and software, so for better cross-platform compatibility I switched to a <a href="https://webgpu.org/" target="_blank">WebGPU</a> backend. This version boasts a hybrid bitonic sort to take advantage of local workgroup memory to reduce VRAM bandwidth bottlenecking, as well as improved physics and surface tension modeling. It can handle 100,000 particles at 60 FPS, nearly 200 times that of my first simulation.</p>
+    <iframe src="https://www.youtube.com/embed/ugMpH08XqSo?si=M6ni_HV1aGs46HqG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
     <h1>Socials</h1>
     <ul>
