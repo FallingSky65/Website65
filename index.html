@@ -95,6 +95,7 @@
     <h1 id="PathTracerFS65">PathTracerFS65</h1>
     <ul>
       <li>Source code: <a href="https://github.com/FallingSky65/PathTracerFS65" target="_blank">https://github.com/FallingSky65/PathTracerFS65</a></li>
+      <li>Stack: C++/SDL2</li>
     </ul>
     <p>This is a path tracer program I wrote in 2023, before I began to use GitHub regularly. The original code is unchanged from when I last updated it on September 4, 2023.</p>
     <p>This program renders a simple scene by simulating photon interactions with surfaces, with each intersection reflecting and accumulating colored light. The code is run entirely on a single CPU thread and the program stores the results for 1/10/50/100 photons per pixel, and displays the final result in a new window.</p>
@@ -111,6 +112,7 @@
     <ul>
       <li>Source code: <a href="https://github.com/FallingSky65/Voxel65cpp" target="_blank">https://github.com/FallingSky65/Voxel65cpp</a></li>
       <li><a href="./Voxel65cpp/Voxel65cpp.html" target="_blank">Try the web demo in your browser!</a></li>
+      <li>Stack: C++/raylib/GLSL</li>
     </ul>
     <p>This is a program I wrote in July 2024, and it implements procedural terrain generation in a voxel engine inspired by Minecraft. It is written in C++ and uses raylib (also raylib-cpp for cpp bindings) for graphics, and it implements on-the-fly optimized mesh generation.</p>
     <div class="grid2">
@@ -122,6 +124,7 @@
     <ul>
       <li>Source code: <a href="https://github.com/FallingSky65/SatPathVisualizer" target="_blank">https://github.com/FallingSky65/SatPathVisualizer</a></li>
       <li>Example project: <a href="https://github.com/FallingSky65/SatPathVisualizerExample" target="_blank">https://github.com/FallingSky65/SatPathVisualizerExample</a></li>
+      <li>Stack: C++/raylib/GLSL</li>
     </ul>
     <p>I built SatPathVisualizer as a C++ library for creating satellite orbit path visualizations. Industry methods for creating these visualizations, typically for satellite missions, often require using paid/closed-source/external services. This project aimed to solve that by creating an open source library under the MIT license.</p>
     <iframe src="https://www.youtube.com/embed/PbOrMjX0KfM?si=tmH6F44Uf4kGNtD0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -132,6 +135,7 @@
     <ul>
       <li>Source code: <a href="https://github.com/FallingSky65/Fluid65" target="_blank">https://github.com/FallingSky65/Fluid65</a></li>
       <li><a href="./Fluid65/Fluid65.html" target="_blank">Try the web demo in your browser!</a></li>
+      <li>Stack: C++/raylib/GLSL</li>
     </ul>
     <p>In total, I've built five fluid simulation projects, each focused on learning and implementing new techniques for faster and more optimized fluid modeling.</p>
     <p>This was my first fluid simulation, inspired by this <a href="https://www.youtube.com/watch?v=rSKMYc1CQHE" target="_blank">YouTube video by Sebastian Lague</a>. It uses smoothed particle hydrodynamics (SPH) (<a href="https://matthias-research.github.io/pages/publications/sca03.pdf" target="_blank">Müller 2003</a>) to simulate fluid physics for 512 particles at 60 FPS. It runs on a single CPU thread in C++, and graphics were done using <a href="https://www.raylib.com/">raylib</a> and GLSL shaders.</p>
@@ -140,6 +144,7 @@
     <h1 id="FluidSim65">FluidSim65</h1>
     <ul>
       <li>Source code: <a href="https://github.com/FallingSky65/FluidSim65" target="_blank">https://github.com/FallingSky65/FluidSim65</a></li>
+      <li>Stack: C/raylib/GLSL</li>
     </ul>
     <p>This was my second fluid simulation, and it improved on the first in three main ways:</p>
     <ol>
@@ -153,6 +158,7 @@
     <h1 id="metaleulerianfluid">metaleulerianfluid</h1>
     <ul>
       <li>Source code: <a href="https://github.com/FallingSky65/metaleulerianfluid" target="_blank">https://github.com/FallingSky65/metaleulerianfluid</a></li>
+      <li>Stack: C++/SDL3/MSL</li>
     </ul>
     <p>This is my third fluid simulation. Unlike the previous two, which were particle-based (Lagrangian) and ran on the CPU, this was grid-based (Eulerian) and ran on the GPU using <a href="https://developer.apple.com/metal/" target="_blank">Metal</a> compute shaders. Seeing the performance boost from the multithreaded parallel processing in my second iteration, this version was focused on learning GPU programming so I could harness the GPU chip for more powerful parallel compute.</p>
     <iframe src="https://www.youtube.com/embed/sBTODx6NLd8?si=biHPucr4ZjcaGCpj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -160,6 +166,7 @@
     <h1 id="LiquidMetal65">LiquidMetal65</h1>
     <ul>
       <li>Source code: <a href="https://github.com/FallingSky65/LiquidMetal65" target="_blank">https://github.com/FallingSky65/LiquidMetal65</a></li>
+      <li>Stack: C/SDL3/MSL</li>
     </ul>
     <p>This is my fourth fluid simulation. Using the GPU programming I learned from my third iteration, this version reimplements the 3D SPH Lagrangian model but with the simulation GPU-accelerated by Metal compute shaders. I implemented a GPU parallel bitonic sort to facilitate this change in architecture (CPU sorts are not optimal on a GPU). This pushed my performance to 32k particles at 60 FPS.</p>
     <iframe src="https://www.youtube.com/embed/Tw0X9M08pFw?si=O4W33o5mV_w-VLox" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -167,6 +174,7 @@
     <h1 id="rustyfluid65">rustyfluid65</h1>
     <ul>
       <li>Source code: <a href="https://github.com/FallingSky65/rustyfluid65" target="_blank">https://github.com/FallingSky65/rustyfluid65</a></li>
+      <li>Stack: Rust/wgpu/WGSL</li>
     </ul>
     <p>This is my fifth and most recent fluid simulation. Using the Metal graphics API locks my code to Apple's ecosystem of hardware and software, so for better cross-platform compatibility I switched to a <a href="https://webgpu.org/" target="_blank">WebGPU</a> backend. This version boasts a hybrid bitonic sort to take advantage of local workgroup memory to reduce VRAM bandwidth bottlenecking, as well as improved physics and surface tension modeling. It can handle 100,000 particles at 60 FPS, nearly 200 times that of my first simulation.</p>
     <iframe src="https://www.youtube.com/embed/ugMpH08XqSo?si=M6ni_HV1aGs46HqG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
