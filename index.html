@@ -5,7 +5,7 @@
     <style>
       .grid-container {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
         width: 100%;
         gap: 12px;
       }
@@ -20,42 +20,74 @@
   </head>
   <body>
     <h1>About Me</h1>
-    <p>Hi there! I am Daniel Li, known online as FallingSky65. I'm a senior at Montgomery Blair High School with a passion for graphics programming. Here are some of my selected projects (for the MIT Maker portfolio):</p>
+    <p>Hi there! I am Daniel Li, known online as FallingSky65. I'm a senior at Montgomery Blair High School with a passion for graphics programming. Here are some of my selected projects:</p>
+    <ul>
+      <li><a href="#PathTracerFS65">PathTracerFS65</a> (Sep 4, 2023)</li>
+      <li><a href="#Voxel65cpp">Voxel65cpp</a> (Jul, 2024)</li>
+      <li><a href="#Fluid65">Fluid65</a> (Aug 14, 2024)</li>
+      <li><a href="#FluidSim65">FluidSim65</a> (Feb 18, 2025)</li>
+      <li><a href="#metaleulerianfluid">metaleulerianfluid</a> (Mar 21, 2025)</li>
+      <li><a href="#LiquidMetal65">LiquidMetal65</a> (Jun 29, 2025)</li>
+      <li><a href="#rustyfluid65">rustyfluid65</a> (Apr 2026 - present)</li>
+    </ul>
 
-    <h1>PathTracerFS65</h1>
-    <p>This is a path tracer program I wrote in 2023, before I began to use GitHub regularly. The original code is unchanged from when I last updated it on September 4, 2023. You can find the source now on <a href="https://github.com/FallingSky65/PathTracerFS65" target="_blank">GitHub</a>.</p>
+    <h1 id="PathTracerFS65">PathTracerFS65</h1>
+    <ul>
+      <li>Source code: <a href="https://github.com/FallingSky65/PathTracerFS65" target="_blank">https://github.com/FallingSky65/PathTracerFS65</a></li>
+    </ul>
+    <p>This is a path tracer program I wrote in 2023, before I began to use GitHub regularly. The original code is unchanged from when I last updated it on September 4, 2023.</p>
     <p>This program renders a simple scene by simulating photon interactions with surfaces, with each intersection reflecting and accumulating colored light. The code is run entirely on a single CPU thread and the program stores the results for 1/10/50/100 photons per pixel, and displays the final result in a new window.</p>
     <p>Here are the results, each image is 960x720 pixels, and every photon is capped at 4 bounces in the scene.</p>
-    <p>1 photon per pixel (left) and 10 photons per pixel (right):</p>
+    <p>From left to right: 1 photon per pixel, 10 photons per pixel, 50 photons per pixel, 100 photons per pixel:</p>
     <div class="grid-container">
-      <img src="./PathTracerFS65/Daniel_Li_updated_raytracer_1frames_691200photons.png" width="960" height="720">
-      <img src="./PathTracerFS65/Daniel_Li_updated_raytracer_10frames_6912000photons.png" width="960" height="720">
-    </div>
-    <p>50 photons per pixel (left) and 100 photons per pixel (right):</p>
-    <div class="grid-container">
-      <img src="./PathTracerFS65/Daniel_Li_updated_raytracer_50frames_34560000photons.png" width="960" height="720">
-      <img src="./PathTracerFS65/Daniel_Li_updated_raytracer_100frames_69120000photons.png" width="960" height="720">
+      <img src="./PathTracerFS65/Daniel_Li_updated_raytracer_1frames_691200photons.png">
+      <img src="./PathTracerFS65/Daniel_Li_updated_raytracer_10frames_6912000photons.png">
+      <img src="./PathTracerFS65/Daniel_Li_updated_raytracer_50frames_34560000photons.png">
+      <img src="./PathTracerFS65/Daniel_Li_updated_raytracer_100frames_69120000photons.png">
     </div>
 
-    <h1>Voxel65cpp</h1>
-    <p>This is a program I wrote in the Summer of 2024, and it implements procedural terrain generation in a voxel engine inspired by Minecraft. It is written in C++ and uses raylib (also raylib-cpp for cpp bindings) for graphics, and it implements on-the-fly optimized mesh generation.</p>
-    <p>See the <a href="./Voxel65cpp/Voxel65cpp.html" target="_blank">code run in your browser</a>!</p>
+    <h1 id="Voxel65cpp">Voxel65cpp</h1>
+    <ul>
+      <li>Source code: <a href="https://github.com/FallingSky65/Voxel65cpp" target="_blank">https://github.com/FallingSky65/Voxel65cpp</a></li>
+      <li><a href="./Voxel65cpp/Voxel65cpp.html" target="_blank">Try the web demo in your browser!</a></li>
+    </ul>
+    <p>This is a program I wrote in July 2024, and it implements procedural terrain generation in a voxel engine inspired by Minecraft. It is written in C++ and uses raylib (also raylib-cpp for cpp bindings) for graphics, and it implements on-the-fly optimized mesh generation.</p>
     <div class="grid-container">
       <img src="./Voxel65cpp/screenshot1.png">
       <img src="./Voxel65cpp/screenshot2.png">
     </div>
-    <h1>Fluid Simulations</h1>
-    <p>I've built a series of fluid simulations through which I learned and implmented many graphics programming and parallel computing algorithms.</p>
-    <h2>Fluid65</h2>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/-EthEYIIo80?si=YHWBtHekxiyzh1z4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+    <h1 id="Fluid65">Fluid65</h1>
     <ul>
-      <li>This is a lagrangian (particle-based) smoothed particle hydrodynamics (SPH) fluid simulation written in C++, using raylib and raylib-cpp for graphics.</li>
-      <li>It runs entirely on the CPU, and on a M2 Macbook Air it can simulate real-time (60FPS) physics for 1000 particles.</li>
-      <li>See the <a href="./Fluid65/Fluid65.html" target="_blank">code run in your own browser</a>!</li>
-      <li>The <a href="https://github.com/FallingSky65/Fluid65" target="_blank">source code is on GitHub</a> and the physics kernels came from <a href="https://matthias-research.github.io/pages/publications/sca03.pdf" target="_blank">this paper by Matthias Muller</a>.</li>
-      <li>This project was inspired by <a href="https://youtu.be/rSKMYc1CQHE" target="_blank">Sebastian Lague's YouTube video on fluid simulation</a>.</li>
-      <li>I built this simulation during the summer of 2024, right before my sophomore year.</li>
+      <li>Source code: <a href="https://github.com/FallingSky65/Fluid65" target="_blank">https://github.com/FallingSky65/Fluid65</a></li>
+      <li><a href="./Fluid65/Fluid65.html" target="_blank">Try the web demo in your browser!</a></li>
     </ul>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/8xFM_rBK8Ck?si=U5sj_67I3rNSszHn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+    <h1 id="FluidSim65">FluidSim65</h1>
+    <ul>
+      <li>Source code: <a href="https://github.com/FallingSky65/FluidSim65" target="_blank">https://github.com/FallingSky65/FluidSim65</a></li>
+    </ul>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/waH-T-jF3h0?si=o0wD5XqETdnZnoVt" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    
+    <h1 id="metaleulerianfluid">metaleulerianfluid</h1>
+    <ul>
+      <li>Source code: <a href="https://github.com/FallingSky65/metaleulerianfluid" target="_blank">https://github.com/FallingSky65/metaleulerianfluid</a></li>
+    </ul>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/sBTODx6NLd8?si=biHPucr4ZjcaGCpj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+    <h1 id="LiquidMetal65">LiquidMetal65</h1>
+    <ul>
+      <li>Source code: <a href="https://github.com/FallingSky65/LiquidMetal65" target="_blank">https://github.com/FallingSky65/LiquidMetal65</a></li>
+    </ul>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/Tw0X9M08pFw?si=O4W33o5mV_w-VLox" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+    <h1 id="rustyfluid65">rustyfluid65</h1>
+    <ul>
+      <li>Source code: <a href="https://github.com/FallingSky65/rustyfluid65" target="_blank">https://github.com/FallingSky65/rustyfluid65</a></li>
+    </ul>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/ugMpH08XqSo?si=M6ni_HV1aGs46HqG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
     <h1>Socials</h1>
     <ul>
       <li>Email - <a href="mailto:danielgongli.65@gmail.com" target="_blank">danielgongli.65@gmail.com</a></li>
